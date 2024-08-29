@@ -1,0 +1,4 @@
+class consultorio_Medico (): 
+    pass 
+def __init__(self):
+        self.pacientes = {}
