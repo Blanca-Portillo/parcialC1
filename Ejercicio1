@@ -1,21 +1,21 @@
 class ConsultorioMedico:
     def __init__(self):
-       
+        
         self.pacientes = {}
 
-    def registrar_Pasientes(self, nombre, motivoconsulta):
+    def registrar_paciente(self, nombre, motivo_consulta):
         if nombre in self.pacientes:
-            print(f"El paciente {nombre} ya tiene una consulta asignada.")
+            print(f"El paciente {nombre} ya tiene una consulta asignada para el día {self.pacientes[nombre]['fecha_consulta']}.")
             print("Por favor, pase a la sala de espera.")
         else:
             fecha_consulta = input("Ingrese la fecha de la consulta: ")
             self.pacientes[nombre] = {
-                "motivo_consulta": motivoconsulta,
+                "motivo_consulta": motivo_consulta,
                 "fecha_consulta": fecha_consulta
             }
             print(f"Consulta asignada a {nombre} para el día {fecha_consulta}.")
 
-    def mostrar_pasientes(self):
+    def mostrar_pacientes(self):
         print("Pacientes registrados:")
         for nombre, datos in self.pacientes.items():
             print(f"Nombre: {nombre}, Motivo: {datos['motivo_consulta']}, Fecha: {datos['fecha_consulta']}")
@@ -41,4 +41,3 @@ while True:
         break
     else:
         print("Opción no válida. Intente nuevamente.")
-
